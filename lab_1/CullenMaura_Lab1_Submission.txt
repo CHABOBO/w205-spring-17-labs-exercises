@@ -1,0 +1,23 @@
+Maura Cullen
+W205 Spring 2017
+Lab 1 Submission
+
+
+Q1: What is the difference between EBS and S3?
+	S3 is a storage facility that can be accessed anywhere, it is storage for the internet. S3 is an object storage system and not a file system. Can connect directly to the internet. 
+	EBS is a data storage “hard drive” that can be mounted to EC2 or computing instance. It is good for keeping data separate from the computing instance. The storage volumes persist independently from the life of the instance. There is more ability to choose the type of file system you desire with EBS
+
+
+Q2: When would you consider a cloud infrastructure for your data science tasks? 
+	I would consider a cloud infrastructure for my data science tasks when I needed either more computation power than my machine provided and/or when I needed more storage for my data.  The cloud services can provide additional space for data storage and save time by cutting down on computation times of the job or simply speeding up reading/writing from a database.  I would also consider using an EBS storage to preserve data, version data and not worry about data loss due to machine crash without a backup. 
+
+
+Q3: What is the difference between spot instances and reserved instances? 	The difference between spot and reserve instances is the pricing model for the instance and the ability to have use of the instance predictably and on demand. The performance of both types of instances, configured to the same specification, is the same when both are running.  
+	In a spot instance, you bid on an instance. You choose the price you are willing to pay for that configuration.  The price of each instance depends on supply and demand of the configuration.  When the price drops to at or below your specified bid, the instance will turn on and be yours to use until the price rises above your bid again.  These can save money but the application you are using the instance to compute must be able to handle interruptions and should not be time sensitive since it is tough to predict when the instance will be available and for how long. 
+	Reserved instances are priced for long term usage. The pricing model depends on the instance attributes, term commitment, and payment plan options. This model allows you to avoid spikes in pricing based on demand and interruptions to computation since the instance is always available to you. If computation needs change, you are able to change some of the instance attributes.  Need to be able to commit to 1 or 3 years of usage in order to take advantage of reserved instances. 
+
+Q4: List the names of four software packages installed on the UCB AMI 
+ConsoleKit.x86_64
+hadoop-0.20-mapreduce.x86_64 
+java-1.8.0-openjdk.x86_64 
+python.x86_64 

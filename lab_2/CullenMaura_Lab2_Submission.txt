@@ -1,0 +1,23 @@
+Maura Cullen
+W205 Spring 2017
+Lab 2 submission
+
+1- List the HDFS contents of /user
+
+[w205@ip-172-31-52-162 ~]$ hdfs dfs -ls /user
+Found 8 items
+drwxr-xr-x   - mapred  supergroup          0 2017-01-22 01:56 /user/history
+drwxrwxrwx   - hive    supergroup          0 2017-01-22 01:57 /user/hive
+drwxrwxrwx   - hue     supergroup          0 2017-01-22 01:58 /user/hue
+drwxrwxrwx   - jenkins supergroup          0 2017-01-22 01:56 /user/jenkins
+drwxrwxrwx   - oozie   supergroup          0 2017-01-22 01:58 /user/oozie
+drwxrwxrwx   - root    supergroup          0 2017-01-22 01:57 /user/root
+drwxr-xr-x   - hdfs    supergroup          0 2017-01-22 02:00 /user/spark
+drwxr-xr-x   - w205    supergroup          0 2017-01-22 02:00 /user/w205
+
+2. 
+Q1: How many live datanodes are there?  1
+
+Q2: How much non-DFS storage is used?  10842447872 (10.10 GB)
+
+Q3: How much DFS storage is used? 0.07%, 143519744 (136.87 MB)
