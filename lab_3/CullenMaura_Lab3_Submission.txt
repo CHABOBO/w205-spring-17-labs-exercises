@@ -1,0 +1,53 @@
+Maura Cullen
+W205 Spring 2017
+Lab 3 submission
+
+##Submissions:
+
+1. List the execution time of the weblog aggregation query for Hive, SparkSQL, and SparkSQL on Parquet.
+
+Hive: Time taken: 42.306 seconds, Fetched: 50 row(s)
+SparkSQL: Time taken: 7.204 seconds, Fetched 50 row(s)
+SparkSQL on Parquet Time taken: 1.628 seconds, Fetched 50 row(s) 
+
+
+2. How many jobs does Hive launch? Does SparkSQL launch jobs?
+Hive launches 2 jobs
+SparkSQL launches 10 jobs
+
+
+3. Write a query which joins weblogs_parquet to user_info and counts the top 5 locations. List the locations.
+Top 5 locations: 
+1. Bessemer
+   Millry
+   Lillian
+2. Angoon
+   Kodiak
+   Petersburg
+
+My Query:
+SELECT user_info.user_id, user_info.location, COUNT(weblogs_parquet.user_id) AS UserCount 
+FROM user_info
+JOIN weblogs_parquet ON user_info.user_id = weblogs_parquet.user_id 
+GROUP BY user_info.user_id, user_info.location
+ORDER BY UserCount DESC
+LIMIT 10;
+
+
+spark-sql> SELECT user_info.user_id, user_info.location, COUNT(weblogs_parquet.user_id) AS UserCount 
+         > FROM user_info
+         > JOIN weblogs_parquet ON user_info.user_id = weblogs_parquet.user_id 
+         > GROUP BY user_info.user_id, user_info.location
+         > ORDER BY UserCount DESC
+         > LIMIT 10;
+__RequestVerificationToken_Lw__=3DDC1   Bessemer        9                       
+__RequestVerificationToken_Lw__=A1BC3	Millry	9
+__RequestVerificationToken_Lw__=32B2B	Lillian	9
+__RequestVerificationToken_Lw__=AA1D3	Angoon	8
+__RequestVerificationToken_Lw__=A1ABB	Kodiak	8
+__RequestVerificationToken_Lw__=31A2B	Petersburg	8
+__RequestVerificationToken_Lw__=3C2B3	Attalla	7
+__RequestVerificationToken_Lw__=3BBCB	Fulton	7
+__RequestVerificationToken_Lw__=3CDAA	Guin	7
+__RequestVerificationToken_Lw__=1B3DA	Cottondale	7
+Time taken: 1.373 seconds, Fetched 10 row(s)
